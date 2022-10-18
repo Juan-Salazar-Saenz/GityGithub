@@ -54,4 +54,49 @@ ssh-keygen -t rsa -b 4096 - C "Juan-0927cacd@hotmail.com" Creamos un ssh para nu
 eval $(ssh-agent -s) Veritifacmos que el agente de ssh este activo
 ssh-add ~/.ssh/id_rsa Agregamos nuestra llave privada a el agente de ssh
 cat ~/.ssh/id_rsa.pub agregamos este archivo a github t ahora todo lo podemos trabjar por ssh
-
+git log --all  no muestra el log de forma extendida
+git log --all --graph nos muestra las ramas y como se han comportado de forma linda
+git log --all --graph --oneline --decorate nos muestra las ramas y como se han comportado de forma linda y comprimida
+alias arbolito"git log --all --graph --oneline --decorate" / creamos el alias para no escribir tanto
+git tag nos sirve para ver los tags
+git show-ref --tags nos muestra los tag y a que id de log corresponde
+git tag -a nombreTag -m "como veo el nuevo tag" id / asi creamos el nuevo tag
+git push origin --tags subimos los tags al repo
+git tag -d nombreTag Eliminamos el tag pero no del repo
+git push origin :refs/tags/nombreTag - Asi lo eliminamos del repo
+git show-branch nos muestra los commit sobre cada rama
+git show-branch --all nos muestra los commit sobre cada rama + comentarios que pusimos
+gitk nos muestra en un frame de forma linda todo
+git pull origin ramaNueva me trae la rama del repo
+pull request solo sirve en github
+fork es una ayuda a proyecto open source y tambiens olo sirve en gituhb
+git remote add upstream + url / agregamos la rama origen de nuestro proyecto fork
+git remote -v
+git pull upstream master
+.gitignore son los archivo que no quieres que vayan a tu repo
+*.tipo archivo ahora todos los archivos de ese tipo no van a subir al repo
+git rebase master / esto se hace desde la rama hija y todos los comiit quedan en la rama padre y la rama hija nunca existio
+git rebase rama hija y lito podemos eliminar la rama creada
+git stash pop / creacmos un codigo en memoria que no se ha entregado
+git stash list  nos lista los stash / codigo en memoria que nunca se entrego
+git stash branch nuevaramita / lo que no habia entregado me lo deja en una neuva rama
+git stash drop elimina el codigo en memoria
+git clean --dry-run / limpia archivo basura segun git
+git clean -f borra los archivos que nos dijo en el run
+git cherry-pick id / sobre la rama que quieras puedes devolverte a un commit x sin hacer revet
+git reflog sirve para ver cuando metimos la pata y podernos devolver
+git commit --amend me agrega lo ultimo que modifique al ultimo commit sin tener que ahcer otro commit
+git grep palabra nos busca el texto en nuestro repo
+git grep -n palabra nos busca el texto en nuestro repo y la linea en la que esta
+git grep -c palabra nos cuenta la cantiadad de veces que usamos esa palabra
+git log -S "palarba en el commit" y nos muestra los commit donde el mensaje tuvo esa palabra
+git shortlog -sn nos dice la cantidad de commit por persona
+git shortlog -sn --all nos dice la cantidad de commit por persona hasta los que se borraron
+git shortlog -sn --all --no-merges nos dice la cantidad de commit por persona hasta los que se borraron y elimina los merge que no valen
+git config --global alias.stats "git shortlog -sn --all --no-merges" crea alias con antelacion del git
+git blame archivo.txt no miuestra quien creo cada linea
+git blame -c archivo.txt no miuestra quien creo cada linea
+git blame --help funciona para saber que hace cada comando
+git blame archivo.txt -l35,53 buscamos por lineas en especifico 
+git branch -r podemos ver las ramas remotas que estan en el servidor
+git branch -a podemos ver todas las ramas 
